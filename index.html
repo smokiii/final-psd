@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Final PSD</title>
+		<link rel="stylesheet" href="stylesheet/bootstrap.css" media="screen"/>
+		<link rel="stylesheet" href="stylesheet/styles.css"/>
+		<script src="scripts/jquery-1.10.1.min.js"></script>
+		<script src="scripts/modernizr.custom.js"></script>
+		<script src="scripts/PIE.js"></script>
+		<script src="scripts/respond.src.js"></script>
+		<script>
+			$(function(){
+				var containerHeight = $('#container').height();					 
+				var headerHeight = $('#header').height();						
+				var navHeight = containerHeight - headerHeight + "px";
+				$('#nav').css("height", navHeight);
+				$('#content').css("height", navHeight);
+				
+				$('a[href^="#"]').click(function(){
+					return false;
+					});
+				
+				
+				
+				$('#nav > ul > li > a').click(function(){												// nav menu
+					var display = $(this).parent().find('.sub-menu').css('display');
+					var subMenu = $(this).parent().find('.sub-menu');
+				
+					if(display=='none'){																			
+						$('#nav >ul li ul').slideUp();
+						subMenu.slideDown();
+						$(this).parent().find('i').removeClass('icon-chevron-right');
+						$(this).parent().find('i').addClass('icon-chevron-down');
+					}
+					else{
+						subMenu.slideUp();
+						$(this).parent().find('i').removeClass('icon-chevron-down');
+						$(this).parent().find('i').addClass('icon-chevron-right');
+					}
+				
+					});
+					
+					$('.chat-window:even img').css({		// chat windows properties
+						'float': 'left',
+						'margin-right': '20px'
+						});
+					$('.chat-window:odd img').css({
+						'float': 'right',
+						'margin-left': '20px'
+						});
+						
+					$('.chat-window:even').css('text-align', "left");	 //  positioning chat elements
+					$('.chat-window:odd').css('text-align', "right");
+					
+					$('.tabs .tabs-tools a').click(function(){
+						$('.tabs .tabs-tools a').removeClass('tabs-hover');
+						$(this).addClass('tabs-hover');
+						});
+						
+					$('#show-hide-nav').click(function(){
+						$('#nav').slideToggle();
+						});	
+					
+			});
+		</script>
+		<script>
+			 function showDate(){
+											var date =new Date();
+											var mm = date.getMonth() + 1;
+											var dd = date.getDate();
+											var yyyy = date.getFullYear();
+											var h=date.getHours();
+											var m=date.getMinutes();
+											var s=date.getSeconds();
+		 									var current = mm + '/' + dd + '/' + yyyy; ;
+											var D = new Date();
+											var hours = D.getHours();
+											var minutes = D.getMinutes();
+											var seconds = D.getSeconds();
+											var time = ', ' + hours + ":" + minutes + ":" + seconds;
+											document.write( ' at ' + current + time);
+						}
+		</script>
+		
+	</head>
+	<body>
+		<div id="container" class="clearfix">
+			<header id="header" class="clearfix">
+				<div id="brand">
+					<img src="images/brand.png" alt="Brand">	
+				</div> <!-- end of brand div -->
+				<div class="info-panel clearfix">
+					<div>
+						<span class="msg-info"></span>
+						<a class="msg-info-link" href="#">5</a>
+					</div>
+					<div>
+						<span class="chat-info"></span>
+						<a class="chat-info-link" href="#">3</a>
+					</div>
+					<div>
+						
+						<a href="#"><span class="user-info"></span></a>
+						<ul>
+							<li>Option1</li>
+							<li>Option2</li>
+							<li>Option3</li>
+							<li>Option4</li>
+						</ul>
+					</div>
+				</div> <!-- end of info-panel div -->
+			</header> <!-- end of header tag -->
+			
+			
+			<div id="content" class="clearfix">
+				<button type="button" id="show-hide-nav"><i class="icon-list icon-white"></i></button>
+				<nav id="nav">
+					
+					<ul>
+						<li class="nav-item"><a class="clearfix" href="#"><span class="html5"></span> HTML 5 <i class="icon-chevron-right icon-white"></i></a>
+							<ul class="sub-menu">
+								<li><a href="#">&#60;section&#62;</a></li>
+								<li><a href="#">&#60;article&#62;</a></li>
+								<li><a href="#">&#60;figure&#62;</a></li>
+							</ul>
+						</li>
+						<li class="nav-item"><a class="clearfix" href="#"><span class="css3"></span> CSS 3 <i class="icon-chevron-right icon-white"></i></a>
+							<ul class="sub-menu">
+								<li><a href="#">&#60;section&#62;</a></li>
+								<li><a href="#">&#60;article&#62;</a></li>
+								<li><a href="#">&#60;figure&#62;</a></li>
+							</ul>
+						</li>
+						<li class="nav-item"><a class="clearfix" href="#"> <span class="jquery"></span>jQuery <i class="icon-chevron-right icon-white"></i></a>
+							<ul class="sub-menu">
+								<li><a href="#">&#60;section&#62;</a></li>
+								<li><a href="#">&#60;article&#62;</a></li>
+								<li><a href="#">&#60;figure&#62;</a></li>
+							</ul>
+						</li>
+						<li class="nav-item"><a class="clearfix" href="#"> <span class="responsive"></span>Responsive <i class="icon-chevron-right icon-white"></i></a>
+							<ul class="sub-menu">
+								<li><a href="#">&#60;section&#62;</a></li>
+								<li><a href="#">&#60;article&#62;</a></li>
+								<li><a href="#">&#60;figure&#62;</a></li>
+							</ul>
+						</li>
+						<li class="nav-item"><a class="clearfix" href="#"><span class="cms"></span> CMS <i class="icon-chevron-right icon-white"></i></a>
+							<ul class="sub-menu">
+								<li><a href="#">&#60;section&#62;</a></li>
+								<li><a href="#">&#60;article&#62;</a></li>
+								<li><a href="#">&#60;figure&#62;</a></li>
+							</ul>
+						</li>
+						<li class="nav-item"><a class="clearfix" href="#"><span class="formmail"></span> Formmail <i class="icon-chevron-right icon-white"></i></a>
+							<ul class="sub-menu">
+								<li><a href="#">&#60;section&#62;</a></li>
+								<li><a href="#">&#60;article&#62;</a></li>
+								<li><a href="#">&#60;figure&#62;</a></li>
+							</ul>
+						</li>
+						<li class="nav-item"><a class="clearfix" href="#"><span class="epages"></span> ePages <i class="icon-chevron-right icon-white"></i></a>
+							<ul class="sub-menu">
+								<li><a href="#">&#60;section&#62;</a></li>
+								<li><a href="#">&#60;article&#62;</a></li>
+								<li><a href="#">&#60;figure&#62;</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav> <!-- end of nav -->
+				<div class="path clearfix">
+					<span></span><p>Home > CMS</p>
+				</div> <!-- end of path div -->
+				<div class="chat clearfix">
+						<div class="chat-tool-bar clearfix">
+							<i class="icon-tasks"></i><p>Chats</p>
+							<div class="chat-tools">
+								<a href="#"><i class="icon-chevron-down"></i></a>
+								<a href="#"><i class="icon-wrench"></i></a>
+								<a href="#"><i class="icon-refresh"></i></a>
+								<a href="#"><i class="icon-remove"></i></a>
+							</div> <!-- end of chat-tools div -->
+						</div> <!-- end of chat-tool-bar div -->
+						<div class="chat-content clearfix">
+							<div class="chat-window clearfix">
+								<img src="images/chat-faces/mark.png" alt="mark"/>
+								<div>
+									<p>
+										<span>Mark King</span>
+										<span class="date">
+											<script>
+												showDate();
+											</script>
+										</span><br/>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae est viverra, auctor lacus ut, vestibulum neque. Etiam aliquam ligula ultrices mi accumsan interdum
+									</p>
+								</div>
+							</div> <!-- end of chat-window div -->
+							<div class="chat-window clearfix">
+								<img src="images/chat-faces/lisa.png" alt="lisa"/>
+								<div>
+									<p>
+										<span>Lisa Wong</span>
+										<span class="date">
+											<script>
+												showDate();
+											</script>
+										</span><br/>
+										Nunc vulputate pharetra nulla eu interdum. Vestibulum quis dolor egestas, accumsan nulla et, pretium nisl. Sed justo tellus, interdum vitae elementum vel,
+									</p>
+								</div>
+							</div> <!-- end of chat-window div -->
+							<div class="chat-window clearfix">
+								<img src="images/chat-faces/mark.png" alt="mark"/>
+								<div>
+									<p>
+										<span>Mark King</span>
+										<span class="date">
+											<script>
+												showDate();
+											</script>
+										</span><br/>
+										Aliquam viverra semper velit vitae tristique. Proin magna neque, dignissim vel erat a, volutpat fermentum ligula. Quisque cursus, neque eu vehicula imperdiet, elit est eleifend eros.
+									</p>
+								</div>
+							</div> <!-- end of chat-window div -->
+							<div class="chat-window clearfix">
+								<img src="images/chat-faces/richard.png" alt="richard"/>
+								<div>
+									<p>
+										<span>Richard Doe</span>
+										<span class="date">
+											<script>
+												showDate();
+											</script>
+										</span><br/>
+										In quis turpis id tellus hendrerit tristique. Sed eleifend quis nulla at pretium. Mauris varius ut justo sed placerat.
+									</p>
+								</div>
+							</div> <!-- end of chat div -->
+							
+						</div> <!-- end of chat-content div -->
+						<form class="clearfix">
+								<input type="text" value="Type a message here..."/>
+								<input type="submit" name="submit" value=""/>
+						</form>
+				</div>  <!-- end of chat div -->
+				<div class="to-do-list">
+						<div class="to-do-tool-bar clearfix">
+							<i class="icon-tasks"></i><p>To Do List</p>
+							<div class="to-do-tools">
+								<a href="#"><i class="icon-chevron-down"></i></a>
+								<a href="#"><i class="icon-wrench"></i></a>
+								<a href="#"><i class="icon-refresh"></i></a>
+								<a href="#"><i class="icon-remove"></i></a>
+							</div> <!-- end of to-do-tools div -->
+						</div> <!-- end of to-do-tool-bar div -->
+						<div class="tasks clearfix">
+							<div class="single-task clearfix">
+								<a href="#">Project Anual Meeting.</a>
+								<button class="add-remove" type="button"><i class="icon-ok"></i></button>
+								<button class="add-remove" type="button"><i class="icon-remove"></i></button>
+								<button class="button-red" type="button"><i class="icon-bell icon-white"></i>Today</button>
+							</div>
+							<div class="single-task clearfix">
+								<a href="#">Project Anual Meeting.</a>
+								<button class="add-remove" type="button"><i class="icon-ok"></i></button>
+								<button class="add-remove" type="button"><i class="icon-remove"></i></button>
+								<button class="button-red" type="button"><i class="icon-bell icon-white"></i>11 Feb</button>
+							</div>
+							<div class="single-task clearfix">
+								<a href="#">Project Anual Meeting.</a>
+								<button class="add-remove" type="button"><i class="icon-ok"></i></button>
+								<button class="add-remove" type="button"><i class="icon-remove"></i></button>
+								<button class="button-green" type="button"><i class="icon-bell icon-white"></i>4.50 PM</button>
+							</div>
+							<div class="single-task clearfix">
+								<a href="#">Project Anual Meeting.</a>
+								<button class="add-remove" type="button"><i class="icon-ok"></i></button>
+								<button class="add-remove" type="button"><i class="icon-remove"></i></button>
+								<button class="button-red" type="button"><i class="icon-bell icon-white"></i>06 Mar</button>
+							</div>
+							<div class="single-task clearfix">
+								<a href="#">Project Anual Meeting.</a>
+								<button class="add-remove" type="button"><i class="icon-ok"></i></button>
+								<button class="add-remove" type="button"><i class="icon-remove"></i></button>
+								<button class="button-red" type="button"><i class="icon-bell icon-white"></i>12 PM</button>
+							</div>
+							<div class="single-task clearfix">
+								<a href="#">Project Anual Meeting.</a>
+								<button class="add-remove" type="button"><i class="icon-ok"></i></button>
+								<button class="add-remove" type="button"><i class="icon-remove"></i></button>
+								<button class="button-orange" type="button"><i class="icon-bell icon-white"></i>Tomorrow</button>
+							</div>
+							<div class="single-task clearfix">
+								<a href="#">Project Anual Meeting.</a>
+								<button class="add-remove" type="button"><i class="icon-ok"></i></button>
+								<button class="add-remove" type="button"><i class="icon-remove"></i></button>
+								<button class="button-red" type="button"><i class="icon-bell icon-white"></i>Today</button>
+							</div>
+							<div class="single-task clearfix">
+								<a href="#">Project Anual Meeting.</a>
+								<button class="add-remove" type="button"><i class="icon-ok"></i></button>
+								<button class="add-remove" type="button"><i class="icon-remove"></i></button>
+								<button class="button-green" type="button"><i class="icon-bell icon-white"></i>09:30 AM</button>
+							</div>
+							<div class="single-task clearfix">
+								<a href="#">Project Anual Meeting.</a>
+								<button class="add-remove" type="button"><i class="icon-ok"></i></button>
+								<button class="add-remove" type="button"><i class="icon-remove"></i></button>
+								<button class="button-orange" type="button"><i class="icon-bell icon-white"></i>Monday</button>
+							</div>
+							<div class="single-task clearfix">
+								<a href="#">Project Anual Meeting.</a>
+								<button class="add-remove" type="button"><i class="icon-ok"></i></button>
+								<button class="add-remove" type="button"><i class="icon-remove"></i></button>
+								<button class="button-red" type="button"><i class="icon-bell icon-white"></i>Today</button>
+							</div>
+							<div class="single-task clearfix">
+								<a href="#">Project Anual Meeting.</a>
+								<button class="add-remove" type="button"><i class="icon-ok"></i></button>
+								<button class="add-remove" type="button"><i class="icon-remove"></i></button>
+								<button class="button-red" type="button"><i class="icon-bell icon-white"></i>Thursday</button>
+							</div>
+							<div class="single-task clearfix">
+								<a href="#">Project Anual Meeting.</a>
+								<button class="add-remove" type="button"><i class="icon-ok"></i></button>
+								<button class="add-remove" type="button"><i class="icon-remove"></i></button>
+								<button class="button-red" type="button"><i class="icon-bell icon-white"></i>Today</button>
+							</div>
+							<div class="single-task clearfix">
+								<a href="#">Project Anual Meeting.</a>
+								<button class="add-remove" type="button"><i class="icon-ok"></i></button>
+								<button class="add-remove" type="button"><i class="icon-remove"></i></button>
+								<button class="button-red" type="button"><i class="icon-bell icon-white"></i>Today</button>
+							</div>
+							<div class="single-task clearfix">
+								<a href="#">Project Anual Meeting.</a>
+								<button class="add-remove" type="button"><i class="icon-ok"></i></button>
+								<button class="add-remove" type="button"><i class="icon-remove"></i></button>
+								<button class="button-red" type="button"><i class="icon-bell icon-white"></i>Today</button>
+							</div>
+							<a href="#">View all todo list</a>
+						</div> <!-- end of tasks div -->
+				</div> <!-- end of to-do-list div -->
+				<div class="tabs">
+					<div class="tabs-tool-bar clearfix">
+						<i class="icon-tasks"></i><p>Tabs</p>
+							<div class="tabs-tools">
+								<a class="tabs-hover" href="#">Tab 1</a>
+								<a href="#">Tab 2</a>
+								<a href="#">Tab 3</a>
+							</div> <!-- end of tabs-tools div -->
+					</div> <!-- end of tabs-tool-bar-tools div -->
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at arcu in massa elementum dignissim vel sed purus. Nam accumsan magna ut vulputate vestibulum. Donec elementum condimentum aliquam. Mauris cursus eleifend ornare. Nullam sodales elit quis turpis tincidunt viverra. Integer hendrerit, eros venenatis dignissim suscipit, magna velit interdum enim, ac malesuada dui urna nec magna. Phasellus sed arcu eu risus blandit pulvinar ac sed sem. Nullam adipiscing ultricies fermentum. Praesent tempor porta vehicula. Morbi ac tellus id nisi semper hendrerit. Pellentesque at lectus vel eros vulputate vestibulum eget eu quam. Etiam tincidunt eros sit amet risus pulvinar laoreet. Phasellus sodales erat ac eros auctor, a aliquam nibh tincidunt. Vivamus vel enim sit amet nunc viverra facilisis. </p>
+				</div> <!-- end of tabs div -->
+				<div class="alerts clearfix">
+					<div class="alerts-tool-bar clearfix">
+						<i class="icon-tasks"></i><p>Alerts</p>
+							<div class="alerts-tools">
+								<a href="#"><i class="icon-chevron-down"></i></a>
+								<a href="#"><i class="icon-wrench"></i></a>
+								<a href="#"><i class="icon-refresh"></i></a>
+								<a href="#"><i class="icon-remove"></i></a>
+							</div> <!-- end of alersts-tools div -->
+					</div> <!-- end of alersts-tool-bar div -->
+					    <div class="alert">
+							 <strong>Warning!</strong> Best check yo self, you're not looking too good.
+							 <button type="button" class="close alert-button" data-dismiss="alert">&times;</button>
+						 </div>
+						 <div class="alert alert-error">
+							 <strong>Success!</strong> Best check yo self, you're not looking too good.
+							 <button type="button" class="close alert-button" data-dismiss="alert">&times;</button>
+						 </div>
+						 <div class="alert alert-success">
+							 <strong>Info!</strong> Best check yo self, you're not looking too good.
+							 <button type="button" class="close alert-button" data-dismiss="alert">&times;</button>
+						 </div>
+						 <div class="alert alert-info">
+							 <strong>Error!</strong> Best check yo self, you're not looking too good.
+							 <button type="button" class="close alert-button" data-dismiss="alert">&times;</button>
+						 </div>
+				</div> <!-- end of alerts div -->
+				<div class="inline-notes clearfix">
+						<div class="inline-tool-bar clearfix">
+						<i class="icon-tasks"></i><p>Inline Notifications</p>
+							<div class="inline-tools">
+								<a href="#"><i class="icon-chevron-down"></i></a>
+								<a href="#"><i class="icon-wrench"></i></a>
+								<a href="#"><i class="icon-refresh"></i></a>
+								<a href="#"><i class="icon-remove"></i></a>
+							</div> <!-- end of inline-tools div -->
+						</div> <!-- end of inline-tool-bar div -->
+						 <div class="alert inline-edit">
+							 <strong>Error!</strong> <br/> Nulla malesuada leo ac nisl faucibus, quis posuere sapien tincidunt. Duis ut nulla accumsan, convallis dolor id, tristique nibh. <br/>
+							 <button type="button" class="close inline-button" data-dismiss="alert">&times;</button>
+							<button class="btn btn-danger" type="button">Do this</button>
+							<button class="btn" type="button">Or do this</button>
+						 </div>
+						 <div class="alert alert-error inline-edit">
+							 <strong>Info!</strong>  <br/> Nulla malesuada leo ac nisl faucibus, quis posuere sapien tincidunt. Duis ut nulla accumsan, convallis dolor id, tristique nibh.<br/>
+							 <button type="button" class="close inline-button" data-dismiss="alert">&times;</button>
+							 <button class="btn btn-info" type="button">Do this</button>
+							<button class="btn" type="button">Or do this</button>
+						 </div>
+						 <br/>
+						 <div class="alert alert-success inline-edit">
+							 <strong>Success!</strong>  <br/> Nulla malesuada leo ac nisl faucibus, quis posuere sapien tincidunt. Duis ut nulla accumsan, convallis dolor id, tristique nibh.<br/>
+							 <button type="button" class="close inline-button" data-dismiss="alert">&times;</button>
+							 <button class="btn btn-success" type="button">Do this</button>
+							<button class="btn" type="button">Or do this</button>
+						 </div>
+						 <div class="alert alert-info inline-edit">
+							 <strong>Warning!</strong> <br/> Nulla malesuada leo ac nisl faucibus, quis posuere sapien tincidunt. Duis ut nulla accumsan, convallis dolor id, tristique nibh.<br/>
+							 <button type="button" class="close inline-button" data-dismiss="alert">&times;</button>
+							 <button class="btn btn-warning" type="button">Do this</button>
+							<button class="btn" type="button">Or do this</button>
+						 </div>
+				</div>
+			</div> <!-- end of content div -->
+		</div> <!-- end of container div -->
+	</body>
+</html>
